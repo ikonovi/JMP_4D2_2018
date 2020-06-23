@@ -1,4 +1,4 @@
-package com.epam.jmp.d2.y2018.m12.t03;
+package com.epm.jmp.d2.y2018.m12.t03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
