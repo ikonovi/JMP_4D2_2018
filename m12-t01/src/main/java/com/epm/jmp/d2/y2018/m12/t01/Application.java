@@ -1,7 +1,7 @@
-package com.epam.jmp.d2.y2018.m12.t01;
+package com.epm.jmp.d2.y2018.m12.t01;
 
-import com.epam.jmp.d2.y2018.m12.t01.configuration.ServiceConfig;
-import com.epam.jmp.d2.y2018.m12.t01.service.RaceService;
+import com.epm.jmp.d2.y2018.m12.t01.configuration.ServiceConfig;
+import com.epm.jmp.d2.y2018.m12.t01.service.RaceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationRunner;
