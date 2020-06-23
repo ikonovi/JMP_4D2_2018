@@ -12,14 +12,14 @@
 		</layout>
 	</appender>
 
-	<logger name="com.epam.jmp.d2.y2018.m02">
+	<logger name="com.epm.jmp.d2.y2018.m02">
 		<level value="info" />
-	</logger>	
-	
-	<logger name="com.epam.jmp.d2.y2018.m02.t4.App">
+	</logger>
+
+	<logger name="com.epm.jmp.d2.y2018.m02.t4.App">
 		<level value="DEBUG" />
 	</logger>
-	
+
 	<root>
 		<level value="error" />
 		<appender-ref ref="console" />
