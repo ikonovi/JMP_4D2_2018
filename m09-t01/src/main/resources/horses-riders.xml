@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<import resource="horse-breeds.xml" />
+
+	<bean id="rider-01"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Rider">
+		<constructor-arg value="Vasia" />
+	</bean>
+	<bean id="rider-02"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Rider">
+		<constructor-arg value="Sema" />
+	</bean>
+	<bean id="rider-03"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Rider">
+		<constructor-arg value="Petia" />
+	</bean>
+	<bean id="rider-04"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Rider">
+		<constructor-arg value="Kolia" />
+	</bean>
+	<bean id="rider-05"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Rider">
+		<constructor-arg value="Grisha" />
+	</bean>
+
+
+	<bean id="horse-01"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Horse">
+		<constructor-arg value="Marta" />
+		<constructor-arg ref="blazerHorseBreed" />
+		<property name="raceRider" ref="rider-01" />
+	</bean>
+
+	<bean id="horse-02"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Horse">
+		<constructor-arg value="Kosel" />
+		<constructor-arg ref="kazakhHorseBreed" />
+		<property name="raceRider" ref="rider-02" />
+	</bean>
+
+	<bean id="horse-03"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Horse">
+		<constructor-arg value="Riki" />
+		<constructor-arg ref="mustangHorseBreed" />
+		<property name="raceRider" ref="rider-03" />
+	</bean>
+
+	<bean id="horse-04"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Horse">
+		<constructor-arg value="Hover" />
+		<constructor-arg ref="rockyMountainHorseBreed" />
+		<property name="raceRider" ref="rider-04" />
+	</bean>
+
+	<bean id="horse-05"
+		class="com.epam.jmp.d2.y2018.m09.t01.model.impl.Horse">
+		<constructor-arg value="Chaka" />
+		<constructor-arg ref="kazakhHorseBreed" />
+		<property name="raceRider" ref="rider-05" />
+	</bean>
+
+	<util:list id="horseList"
+		value-type="com.epam.jmp.d2.y2018.m09.t01.model.impl.Horse">
+		<ref bean="horse-01" />
+		<ref bean="horse-02" />
+		<ref bean="horse-03" />
+		<ref bean="horse-04" />
+		<ref bean="horse-05" />
+	</util:list>
+
+
+</beans>
