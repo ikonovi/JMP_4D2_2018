@@ -23,13 +23,13 @@
 
 
 	<!-- ============================================================================= -->
-	
+
 	<!-- Application logger -->
-	<logger name="com.epam.jmp.d2.y2018">
+	<logger name="com.epm.jmp.d2.y2018">
 		<level value="debug" />
 	</logger>
-	
-		
+
+
 	<logger name="org.springframework">
 		<level value="info" />
 	</logger>
