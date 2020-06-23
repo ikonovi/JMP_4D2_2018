@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{3}] - %m%n %throwable{short}" />
+		</layout>
+	</appender>
+
+	<appender name="log-files" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="target/log4j-application.log" />
+		<param name="append" value="false" />
+		<param name="MaxFileSize" value="1MB" />
+		<param name="MaxBackupIndex" value="5" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%15.45c{3}] - %m%n %throwable" />
+		</layout>
+	</appender>
+
+
+	<!-- ============================================================================= -->
+	
+	<!-- Application logger -->
+	<logger name="com.epam.jmp.d2.y2018">
+		<level value="debug" />
+	</logger>
+	
+		
+	<logger name="org.springframework">
+		<level value="info" />
+	</logger>
+
+	<root>
+		<level value="error" />
+		<appender-ref ref="console" />
+		<appender-ref ref="log-files" />
+	</root>
+
+</log4j:configuration>
