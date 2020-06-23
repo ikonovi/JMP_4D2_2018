@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{BOOK_CATALOGUE}"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/style1/main.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+	<div class="floatLeft">
+		<table class="tg">
+			<caption th:text="#{STORE_TITLE}"></caption>
+			<thead>
+				<tr>
+					<th width="80"><span th:text="#{STORE_ITEM_ID}"></span></th>
+					<th colspan="2" />
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="book : ${books}">
+					<td>
+						<span th:utext="${book.id}"></span>
+					</td>
+					<td th:inline="text">
+						<p>
+							<span><strong>[[${book.title}]]</strong></span>
+						</p>
+						<p>
+							<span><strong>[[#{STORE_ITEM_BOOK_AUTHOR}]]:</strong></span> 
+							<span th:text="${book.author}"></span>
+						</p>
+						<p>
+							<span th:text="#{STORE_ITEM_PRICE}"></span> 
+							<span th:text="${book.price}"></span>
+						</p>
+						<p>
+							<a th:href="@{'/bookDetail/' + ${book.id}}"> 
+								<span th:text="#{STORE_ITEM_SEE_DETAILS}"></span>
+							</a>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<div class="floatLeft" align="right" 
+		th:insert="~{inc_shopping_cart_light :: #shopLightCardId}"></div>
+	
+	<div>
+		<a th:href="@{/not-existed-resource}">Broken Link - Handling of HTTP error 404.</a>
+	</div>
+
+
+</body>
+</html>

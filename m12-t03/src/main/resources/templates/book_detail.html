@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{BOOK_DETAIL}"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/css/style1/main.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+	<div th:insert="~{inc_book_catalogue_lnk :: #catalogueLinkId}"></div>
+
+
+	<div class="floatLeft">
+		<h3 th:text="${book.title}"></h3>
+		<p>
+			<strong><span th:text="#{AUTHOR}"></span>:</strong> 
+			<span th:text="${book.author}"></span>
+		</p>
+		<p>
+			<strong><span th:text="#{DESCRIPTION}"></span>:</strong> 
+			<span th:text="${book.description}"></span>
+		</p>
+	
+		<hr>
+		<p>
+			<span th:text="#{PRICE}"></span>:
+			<span th:text="${book.price}"></span>
+		</p>
+			
+		<div>
+			<form th:action="@{'/bookDetail/' + ${book.id} + '/AddToCart'}" method="get">
+				<label for="qty">
+					<span th:text="#{QUANTITY}"></span>
+				</label>
+				<input type="number" id="qty" name="qty" min="1" max="25" maxlength="3" value="1">
+				<input type="submit" th:value="#{ADD_TO_CART}">
+			</form>
+		</div>
+		
+		<div th:if="${inCart}">
+			<p>
+				<i><span th:text="#{BOOK_ADDED_TO_CART}"></span></i>
+			</p>
+		</div>
+	</div>
+	
+	
+	<div class="floatLeft" align="right" 
+		th:insert="~{inc_shopping_cart_light :: #shopLightCardId}"></div>
+
+	
+</body>
+</html>
