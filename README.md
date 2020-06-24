@@ -1,1 +1,11 @@
-# JMP_4D2_2018
+### JMP_4D2_2018
+- [x] 1	Lambdas & Streams (Java 8)
+- [x] 2	JVM Internals Part 1: Memory Management and Classloading
+- [x] 3	JVM Internals Part 2: Garbage Collection
+- [x] 4	Infrastructure: Build Java application with Maven and Gradle
+- [x] 5	Infrastructure: Learn Continuous Integration Concepts (Jenkins)
+- [x] 6	Testing: JUnit 4 and 5, jmock, TDD, BDD
+- [x] 7	Multithreading: Classic Model and Concurrency
+- [x] 9	Spring Core Basics
+- [x] 11	Spring MVC
+- [x] 12	Spring Core Advanced (+ Spring Boot + Spring 5)
