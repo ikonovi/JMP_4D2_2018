@@ -92,3 +92,10 @@ Look at the Collector interface and read about combine method if something is go
 3. java.lang.OutOfMemoryError: Metaspace. Load classes continuously and make them stay in memory.
 4. java.lang.StackOverflowError. Use recursive methods. Don’t tune stack size.
 5. java.lang.StackOverflowError. Do not use recursive methods. Don’t tune stack size.
+# m02-t03
+
+### MAT for heap dump analysis
+1.	Write simple application that consumes memory or take your mentoring pet application
+1.	Catch java.lang.OutOfMemoryError: Java heap space
+1.	Make heap dump (-XX:+HeapDumpOnOutOfMemoryError or via visualvm)
+1.	With Memory Analyzer Tool generate report that shows which classes are consuming the memory
