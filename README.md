@@ -166,3 +166,17 @@ Requirement: you should make Task 1.
 5.	Add some top level println statements to the script.
 6.	Add a println statement to the configuration block of the ‘MyDate’ task.
 7.	Execute the ‘startGradle’ task and analyze the output.
+# m05-t01
+
+### Play with Jenkins
+
+1.	Download LTS version of Jenkins
+2.	Install Jenkins (as a service)
+3.	Install JDK7, Maven, Ant
+4.	Configure Jenkins with installed JDK, Maven, Ant
+5.	Configure Jenkins with additional JDK (auto-installed)
+6.	Install 10 Jenkins plugins (Git, Parametrized trigger, email-ext, Scriptler, Groovy postbuild, Green Balls etc.)
+7.	Configure Jenkins security (install Role strategy plugin). Remove anonymous access. Create administrator user (all permissions) and developer user (build job, cancel builds)
+8.	Create simple free-style job
+9.	Setup simple trigger and build action (echo current build number)
+10.	Send email about build result
