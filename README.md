@@ -153,3 +153,16 @@ Make screenshots for each subtask and prove your power of JVM – master!
 Write a custom task class of type Salary. Add a property ‘amount’ for the size of salary. Assign a default value to it. The task action should print the ‘amount’ value property. 
 
 Add two tasks (MySalary and Mom's Friend's Son’s Salary) to your build script, both of type Salary. One should assign a custom value to the ‘amount’ property. Execute both tasks.
+# m04-t03
+
+### Task dependencies
+
+Requirement: you should make Task 1.
+
+1.	Make the ‘MyDate’ task depend on the ‘startGradle’ task.
+2.	Execute the ‘MyDate’ task.
+3.	Execute gradle tasks --all.
+4.	The --dry-run (or -m) command line option executes the build but disables all actions. Execute ‘MyDate’ with the dry-run option.
+5.	Add some top level println statements to the script.
+6.	Add a println statement to the configuration block of the ‘MyDate’ task.
+7.	Execute the ‘startGradle’ task and analyze the output.
