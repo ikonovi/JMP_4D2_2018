@@ -109,3 +109,26 @@ Look at the Collector interface and read about combine method if something is go
 5.	Load the classes Cat and Dog into an array or collection Animals by your own class loader and run the methods "Play", "Voice".
 6.	Output data to console by log4j library (logger).
 Note: Methods should just print a text message.
+# m03-t02
+
+### Visual VM + GC Plugin
+
+Take the code and run
+```
+public class Main {
+    public static void main(String[] args) {
+        List<Object> list = new ArrayList<Object>();
+        while(true) {
+             list.add(new Object());
+        }
+    }
+}
+```
+
+
+Connect to the running JVM with VisualVM with installed GC plugin. Observe GC curve and memory regions.
+1.	Apply changes to the following app code to make GC curve have peaks that are more frequent.
+2.	Tune GC settings via JVM flags (change GC, maybe) to make GC curve have peaks that are more frequent.
+3.	Tune Heap regions via JVM flags to make GC curve have peaks that are more frequent.
+
+Make screenshots for each subtask and prove your power of JVM – master!
