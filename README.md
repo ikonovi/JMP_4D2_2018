@@ -35,3 +35,11 @@ Try to use method reference if it is possible
 2.	Create your own functional interface and add several implementations using both lambda expressions and inner anonymous classes.
 3.	Add few default methods to it and use them.
 4.	Add few static methods to it and use them. 
+
+# m01-t04
+
+### Custom Functional Interface
+1.	Write your own functional interface ThreeFunction (it takes three arguments and produce result).
+2.	Implement this with two different lambdas
+3.	Provide client code with usage of this lambdas
+
