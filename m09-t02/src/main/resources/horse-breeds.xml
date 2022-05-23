@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<context:property-placeholder location="horse-breeds.properties"/>
+
+	<bean id="blazerHorseBreed"
+		class="com.epm.jmp.d2.y2018.m09.t01.model.breed.impl.BlazerHorseBreed">
+		<constructor-arg value="${BlazerHorseBreed.name}" />
+		<property name="breedType" value="SPORT" />
+		<property name="colored" value="false" />
+	</bean>
+
+	<bean id="kazakhHorseBreed"
+		class="com.epm.jmp.d2.y2018.m09.t01.model.breed.impl.KazakhHorseBreed">
+		<constructor-arg value="${KazakhHorseBreed.name}" />
+		<property name="breedType" value="SPORT" />
+		<property name="colored" value="false" />
+	</bean>
+
+	<bean id="mustangHorseBreed"
+		class="com.epm.jmp.d2.y2018.m09.t01.model.breed.impl.MustangHorseBreed">
+		<constructor-arg value="${MustangHorseBreed.name}" />
+		<property name="breedType" value="SADDLE" />
+		<property name="colored" value="true" />
+	</bean>
+
+	<bean id="rockyMountainHorseBreed"
+		class="com.epm.jmp.d2.y2018.m09.t01.model.breed.impl.RockyMountainHorseBreed">
+		<constructor-arg value="${RockyMountainHorseBreed.name}" />
+		<property name="breedType" value="HEAVY" />
+		<property name="colored" value="true" />
+	</bean>
+
+</beans>
