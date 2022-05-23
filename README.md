@@ -214,3 +214,14 @@ The first thread adds elements into the map, the other go along the given map an
 1.	Fix the problem with ConcurrentHashMap и Collections.synchronizedMap. 
 2.	Try to write your custom ThreadSafeMap with synchronization and without. 
 3.	Run your samples with different versions of Java (6, 8, and 10, 11) and measure the performance. Provide a simple report to your mentor.
+# m07-t02
+### Deadlocks
+
+Create three threads:
+
+*	1st thread is infinitely writing random number to the collection
+*	2nd thread is printing sum of the numbers in the collection
+*	3rd is printing square root of sum of squares of all numbers in the collection
+
+Make these calculations thread-safe using synchronization block.
+Fix the possible deadlock.
