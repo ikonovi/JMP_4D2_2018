@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="#{SHOPPING_CART_PAGE_TITLE}"></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link th:href="@{/css/style1/main.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<div th:insert="~{inc_book_catalogue_lnk :: #catalogueLinkId}"></div>
+	
+	
+	<div class="floatLeft"></div>
+	
+	
+	<div class=".floatLeft" align="right">
+		<table class="tg">
+			<caption th:text="#{USER_GREETING}"></caption>
+			<thead>
+				<tr>
+					<th colspan="2">
+						<span th:text="#{SHOPPING_CART_TITLE}"></span>:
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:unless="${#lists.isEmpty(orderItems)}" th:each="orderItem : ${orderItems}">
+					
+					<td>
+						<div>
+							<strong><span th:text="#{STORE_ITEM_ID}"></span>:&nbsp;</strong>
+							<span th:text="${orderItem.storeItem.id}"></span>
+						</div>
+						<hr/> 
+						<div>
+							<strong><span th:text="${orderItem.storeItem.title}"></span></strong>
+						</div>
+						<div>
+							<strong><span th:text="#{STORE_ITEM_BOOK_AUTHOR}"></span>:&nbsp;</strong>
+							<span th:text="${orderItem.storeItem.author}"></span>
+						</div> 
+						<div>
+							<strong><span th:text="#{STORE_ITEM_PRICE}"></span>:&nbsp;</strong>
+							<span th:text="${orderItem.storeItem.price}"></span>
+						</div>
+						<form th:action="@{'/shopping_cart/book/' + ${orderItem.storeItem.id} + '/updateQty'}">
+							<label for="qty">
+								<strong><span th:text="#{QUANTITY}"></span>:</strong>
+							</label>
+							<input type="number" id="qty" name="qty" min="1" max="25" maxlength="3" th:value="${orderItem.quantity}">
+							<input type="submit" th:value="#{BUTTON_ITEM_UPDATE_QTY}">
+						</form>
+					</td>
+					
+					<td>
+						<div>
+							<a th:href="@{'/shopping_cart/book/' + ${orderItem.storeItem.id} + '/remove'}"
+								th:text="#{BUTTON_ITEM_REMOVE}"></a>
+						</div>
+					</td>
+					
+				</tr>
+						
+				<tr th:if="${#lists.isEmpty(orderItems)}">
+					<td align="center" colspan="2">
+						<i><span th:text="#{SHOPPING_CART_EMPTY}"></span></i>
+					</td>
+				</tr>
+
+			</tbody>
+			<tfoot align="left">
+				<tr>
+					<th colspan="2">
+						<span th:text="#{SHOPPING_CART_TOTAL}"></span>: 
+						<span th:text="${totalPrice}"></span>
+					</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+
+
+</body>
+</html>

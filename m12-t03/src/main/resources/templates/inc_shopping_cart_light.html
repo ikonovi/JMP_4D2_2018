@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+
+		<table class="tg" id="shopLightCardId">
+			<caption th:text="#{USER_GREETING}"></caption>
+			<thead>
+				<tr>
+					<th>
+						<a th:href="@{/shopping_cart/}" th:text="#{SHOPPING_CART_TITLE} + ':'"></a>
+					</th>
+				</tr>
+			</thead>
+			<tbody th:inline="text">									
+				<tr th:unless="${#lists.isEmpty(orderItems)}">
+					<td th:inline="text">
+						<span><i>[[#{SHOPPING_CART_ITEMS_COUNT}]]: [[${orderItemsCount}]]</i></span>
+					</td>
+				</tr>
+				<tr th:if="${#lists.isEmpty(orderItems)}">
+					<td align="center">
+						<span><i>[[#{SHOPPING_CART_EMPTY}]]</i></span>
+					</td>
+				</tr>			
+			</tbody>
+		</table>
+
+
+</body>
