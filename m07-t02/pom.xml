@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.epm.jmp-4d2-2018</groupId>
+	<artifactId>m07-t02</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Task 2. (15 points) Deadlocks</name>
+	<description>Create three threads:
+		•	1st thread is infinitely writing random number to the collection
+		•	2nd thread is printing sum of the numbers in the collection
+		•	3rd is printing square root of sum of squares of all numbers in the collection
+		Make these calculations thread-safe using synchronization block.
+		Fix the possible deadlock.
+	</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+	</properties>
+
+</project>
